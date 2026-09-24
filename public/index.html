@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostTrack - Feed</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Supabase JS Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">PostTrack</div>
+    <input type="text" id="search" placeholder="Buscar por título, autor ou data..." oninput="filtrarPosts()">
+  </header>
+
+  <main class="container">
+    <div id="feed-container">
+      <p style="text-align: center; color: #888;">A carregar publicações...</p>
+    </div>
+  </main>
+
+  <!-- Modal para ver imagem em tamanho grande -->
+  <div id="modal" class="modal" onclick="fecharModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img-modal">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

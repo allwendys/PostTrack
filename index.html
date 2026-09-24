@@ -6,14 +6,13 @@
   <title>PostTrack</title>
   <link rel="stylesheet" href="style.css">
   
-  <!-- SCRIPT OBRIGATÓRIO DO SUPABASE (Avança o cliente no navegador) -->
+  <!-- CDN do Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
-  <!-- O teu ficheiro JS -->
+  <!-- Teu JS importado UMA ÚNICA VEZ -->
   <script src="script.js" defer></script>
 </head>
 <body>
-  ...
 
   <header class="navbar">
     <div class="logo">PostTrack</div>
@@ -26,12 +25,10 @@
     </div>
   </main>
 
-  <!-- Modal para ver imagem em tamanho grande -->
   <div id="modal" class="modal" onclick="fecharModal()">
     <span class="close">&times;</span>
     <img class="modal-content" id="img-modal">
   </div>
 
-  <script src="script.js"></script>
 </body>
 </html>

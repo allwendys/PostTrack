@@ -1,6 +1,6 @@
 // CONFIGURAÇÃO DO SUPABASE
 const SUPABASE_URL = "https://sovybkcqlmtznorhqdap.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNvdnlia2NxbG10em5vcmhxZGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyODU5OTYsImV4cCI6MjEwNTg2MTk5Nn0.7QmukKLyEMRSr0Q2KcpvSizsuUC7xz4EYCo4OEaBK90I";
+const SUPABASE_KEY = "sb_publishable_8ZF-R8CMLldCTtLiUmIELg_GBiIZlBF";
 const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 document.addEventListener("DOMContentLoaded", () => {

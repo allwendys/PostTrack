@@ -9,25 +9,40 @@
   <!-- CDN do Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
-  <!-- Teu JS importado UMA ÚNICA VEZ -->
+  <!-- Script do projeto -->
   <script src="script.js" defer></script>
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="logo">PostTrack</div>
-    <input type="text" id="search" placeholder="Buscar por título, autor ou data..." oninput="filtrarPosts()">
-  </header>
+  <!-- ECRÃ DE LOGIN DO FEED -->
+  <div id="login-box" class="box-login">
+    <h2>PostTrack - Entrar</h2>
+    <input type="email" id="login-email" placeholder="E-mail">
+    <input type="password" id="login-senha" placeholder="Senha">
+    <button onclick="fazerLoginFeed()">Entrar no Feed</button>
+    <p id="login-erro" class="erro-msg"></p>
+  </div>
 
-  <main class="container">
-    <div id="feed-container">
-      <p style="text-align: center; color: #888;">A carregar publicações...</p>
+  <!-- CONTEÚDO DO FEED (OCULTO POR DEFEITO) -->
+  <div id="feed-app" class="hidden" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+    <header class="navbar">
+      <div class="logo-bar">
+        <div class="logo">PostTrack</div>
+        <button onclick="fazerLogoutFeed()" class="btn-logout">Sair</button>
+      </div>
+      <input type="text" id="search" placeholder="Buscar por título, autor ou data..." oninput="filtrarPosts()">
+    </header>
+
+    <main class="container">
+      <div id="feed-container">
+        <p style="text-align: center; color: #888;">A carregar publicações...</p>
+      </div>
+    </main>
+
+    <div id="modal" class="modal" onclick="fecharModal()">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img-modal">
     </div>
-  </main>
-
-  <div id="modal" class="modal" onclick="fecharModal()">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="img-modal">
   </div>
 
 </body>

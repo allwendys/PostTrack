@@ -3,9 +3,37 @@ const SUPABASE_URL = "https://sovybkcqlmtznorhqdap.supabase.co";
 const SUPABASE_KEY = "sb_publishable_8ZF-R8CMLldCTtLiUmIELg_GBiIZlBF";
 const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-document.addEventListener("DOMContentLoaded", () => {
-  carregarPosts();
+document.addEventListener("DOMContentLoaded", async () => {
+  // Verifica se já existe uma sessão ativa ao abrir a página
+  const { data: { session } } = await _supabase.auth.getSession();
+  if (session) {
+    mostrarFeed();
+  }
 });
+
+async function fazerLoginFeed() {
+  const email = document.getElementById("login-email").value;
+  const password = document.getElementById("login-senha").value;
+  
+  const { data, error } = await _supabase.auth.signInWithPassword({ email, password });
+  
+  if (error) {
+    document.getElementById("login-erro").innerText = "Acesso negado: " + error.message;
+  } else {
+    mostrarFeed();
+  }
+}
+
+async function fazerLogoutFeed() {
+  await _supabase.auth.signOut();
+  location.reload();
+}
+
+function mostrarFeed() {
+  document.getElementById("login-box").classList.add("hidden");
+  document.getElementById("feed-app").classList.remove("hidden");
+  carregarPosts();
+}
 
 async function carregarPosts() {
   try {

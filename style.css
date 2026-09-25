@@ -176,3 +176,67 @@ body {
   font-size: 35px; 
   cursor: pointer; 
 }
+
+/* Estilos para a Tela de Login do Feed */
+.box-login {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.box-login input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #2a2a2a;
+  color: #fff;
+  outline: none;
+}
+
+.box-login button {
+  width: 100%;
+  padding: 10px;
+  background: #0095f6;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.box-login button:hover {
+  background: #0077c5;
+}
+
+.erro-msg {
+  color: #ed4956;
+  font-size: 13px;
+}
+
+.logo-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-logout {
+  background: #ed4956;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
